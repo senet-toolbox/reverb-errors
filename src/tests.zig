@@ -182,6 +182,26 @@ test "record writes the group, the report, its stack and its events" {
     try testing.expectEqualStrings(&recorded.group_id, try db.text(a, "SELECT id::text FROM error_groups"));
 }
 
+test "a report as vapor's runtime sends it records" {
+    const db = try TestDb.migrated();
+    defer db.close();
+    var arena: std.heap.ArenaAllocator = .init(testing.allocator);
+    defer arena.deinit();
+    const a = arena.allocator();
+    // Captured from vapor's browser test (/crash, its panic button).
+    const report = try Report.parse(a, @embedFile("testdata/vapor_report.json"));
+    _ = try errors.record(db.pool, a, report);
+    try testing.expectEqualStrings("Panic|boom: the crash test panics|main.panicNow|t|/crash", try db.text(
+        a,
+        "SELECT concat_ws('|', error_type, message, crash_function, is_wasm_trap, route) FROM error_groups",
+    ));
+    try testing.expectEqual(@as(i64, @intCast(report.wasmError.user_stack.len)), try db.count("SELECT count(*) FROM stack_frames"));
+    try testing.expectEqualStrings("input crash-note, click crash-panic", try db.text(
+        a,
+        "SELECT string_agg(event_type || ' ' || element_id, ', ' ORDER BY timestamp) FROM trace_events",
+    ));
+}
+
 test "the same crash counts again; a resolved group regresses, an ignored one stays ignored" {
     const db = try TestDb.migrated();
     defer db.close();

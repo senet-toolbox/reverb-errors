@@ -1,0 +1,101 @@
+{
+    "element_id": "crash-panic",
+    "wasmError": {
+        "type": "Panic",
+        "message": "boom: the crash test panics",
+        "is_wasm_trap": true,
+        "crash_site": {
+            "function": "main.panicNow",
+            "wasm_function_index": 5114,
+            "wasm_offset": "0x21c477",
+            "file": null,
+            "line": null,
+            "column": null,
+            "frame_type": "wasm"
+        },
+        "user_stack": [
+            {
+                "function": "main.panicNow",
+                "wasm_function_index": 5114,
+                "wasm_offset": "0x21c477",
+                "file": null,
+                "line": null,
+                "column": null,
+                "frame_type": "wasm"
+            },
+            {
+                "function": "lib.events.ErasedCallback.make__anon_67838.Closure.run",
+                "wasm_function_index": 5109,
+                "wasm_offset": "0x21c3fd",
+                "file": null,
+                "line": null,
+                "column": null,
+                "frame_type": "wasm"
+            },
+            {
+                "function": "lib.events.ErasedCallback.call",
+                "wasm_function_index": 464,
+                "wasm_offset": "0x2f96f",
+                "file": null,
+                "line": null,
+                "column": null,
+                "frame_type": "wasm"
+            },
+            {
+                "function": "lib.events.invokeErasedCallback",
+                "wasm_function_index": 491,
+                "wasm_offset": "0x32c67",
+                "file": null,
+                "line": null,
+                "column": null,
+                "frame_type": "wasm"
+            },
+            {
+                "function": "HTMLElement.o",
+                "wasm_function_index": null,
+                "wasm_offset": null,
+                "file": "http://127.0.0.1:62177/bundle.min.js",
+                "line": 2,
+                "column": 54092,
+                "frame_type": "js"
+            },
+            {
+                "function": "at <anonymous>:1:84",
+                "wasm_function_index": null,
+                "wasm_offset": null,
+                "file": null,
+                "line": null,
+                "column": null,
+                "frame_type": "unknown"
+            },
+            {
+                "function": "at <anonymous>:1:108",
+                "wasm_function_index": null,
+                "wasm_offset": null,
+                "file": null,
+                "line": null,
+                "column": null,
+                "frame_type": "unknown"
+            }
+        ]
+    },
+    "events": [
+        {
+            "timestamp": 1792689582464900,
+            "event_type": "input",
+            "element_id": "crash-note"
+        },
+        {
+            "timestamp": 1792689582467000,
+            "event_type": "click",
+            "element_id": "crash-panic"
+        }
+    ],
+    "timestamp": 1792689582469000,
+    "route": "/crash",
+    "url": "http://127.0.0.1:62177/crash",
+    "session_id": "fb97d821-d8c0-4aff-9484-37bbf7d7789e",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+    "environment": "test",
+    "release": "browser-test"
+}
