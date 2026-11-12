@@ -5,8 +5,8 @@
     .minimum_zig_version = "0.16.0",
     .dependencies = .{
         .reverb = .{
-            .url = "git+https://github.com/senet-toolbox/reverb#7862f54f46acbefaaaee1fdcf71575a232c6fc55",
-            .hash = "reverb-0.0.0-Gtb4yRORDACUQO0xSc_6TUx5UtImaH1BZgV2o03hf6hB",
+            .url = "git+https://github.com/senet-toolbox/reverb#5211e508bf0c91c6c2663ef25017936efb85bd24",
+            .hash = "reverb-0.0.0-Gtb4yaeSDADfm6PRi6OxTbyRE-J_VlqD__RZqSABe3m9",
         },
         .pg_orm = .{
             .url = "git+https://github.com/senet-toolbox/pg-orm#d1d78e7e125c607e605f4dd433881eaf1902fb69",
