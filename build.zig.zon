@@ -9,8 +9,8 @@
             .hash = "reverb-0.0.0-Gtb4yRORDACUQO0xSc_6TUx5UtImaH1BZgV2o03hf6hB",
         },
         .pg_orm = .{
-            .url = "git+https://github.com/senet-toolbox/pg-orm#34d5d2f77540bcd1a57d349fec7bae14a861417f",
-            .hash = "pg_orm-0.0.0-DZids0OVBADdK8gWwiJo4xgrt2DXpIRc0KOmFJkuhXgK",
+            .url = "git+https://github.com/senet-toolbox/pg-orm#d1d78e7e125c607e605f4dd433881eaf1902fb69",
+            .hash = "pg_orm-0.0.0-DZidswrhCwAyjOwRqxfTfHx8rkNLhiFq6ZlRx5-1CnuU",
         },
     },
     .paths = .{ "build.zig", "build.zig.zon", "src", "LICENSE", "README.md" },
